@@ -35,9 +35,9 @@ namespace ProjectMay
                 ctx.Roles.Add(new Role("Salesman"));
                 ctx.SaveChanges();
 
-                ctx.Users.Add(new User("Overlord", CreateMD5(""), ctx.Roles.FirstOrDefault(r => r.Id == 1)));
-                ctx.Users.Add(new User("Clerk", CreateMD5("test"), ctx.Roles.FirstOrDefault(r => r.Id == 2)));
-                ctx.Users.Add(new User("Sales", CreateMD5(""), ctx.Roles.FirstOrDefault(r => r.Id == 3)));
+                ctx.Users.Add(new User("Tim", "Audenaert", "Overlord", "", ctx.Roles.FirstOrDefault(r => r.Id == 1)));
+                ctx.Users.Add(new User("Ken", "Field", "Clerk", "test", ctx.Roles.FirstOrDefault(r => r.Id == 2)));
+                ctx.Users.Add(new User("Wesley", "Messiaen", "Sales", "", ctx.Roles.FirstOrDefault(r => r.Id == 3)));
                 ctx.SaveChanges();
             }
         }
@@ -53,7 +53,7 @@ namespace ProjectMay
                 }
                 else
                 {
-                    if (user.Password == CreateMD5(TxtPassword.Text))
+                    if (user.Password == User.CreateMD5(TxtPassword.Text))
                     {
                         Global.UserId = user.Id;
                         Global.Username = user.Username;
@@ -66,25 +66,6 @@ namespace ProjectMay
                     else MessageBox.Show("Incorrect password.");
                 }
             }
-        }
-
-        // SOURCE: https://stackoverflow.com/questions/11454004/calculate-a-md5-hash-from-a-string
-        public static string CreateMD5(string input)
-        {
-            // Use input string to calculate MD5 hash
-            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
-            {
-                byte[] inputBytes = Encoding.ASCII.GetBytes(input);
-                byte[] hashBytes = md5.ComputeHash(inputBytes);
-
-                // Convert the byte array to hexadecimal string
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    sb.Append(hashBytes[i].ToString("X2"));
-                }
-                return sb.ToString();
-            }
-        }
+        }        
     }
 }

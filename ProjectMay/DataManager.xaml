@@ -1,0 +1,25 @@
+﻿<Window x:Class="ProjectMay.DataManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMay"
+        mc:Ignorable="d"
+        Title="DataManager" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="BtnUsers" Content="Users" FontSize="30" Click="BtnUsers_Click"></Button>
+        <Button x:Name="BtnProducts" Grid.Row="1" Content="Products" FontSize="30"></Button>
+        <Button x:Name="BtnCustomers" Grid.Row="2" Content="Customers" FontSize="30"></Button>
+        <Frame x:Name ="Manager" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3"></Frame>
+    </Grid>
+</Window>

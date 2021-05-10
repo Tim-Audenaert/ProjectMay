@@ -29,5 +29,11 @@ namespace ProjectMay
                 BtnUserManager.IsEnabled = true;
             }
         }
+
+        private void BtnDataManager_Click(object sender, RoutedEventArgs e)
+        {
+            DataManager mngr = new DataManager();
+            mngr.Show();
+        }
     }
 }
