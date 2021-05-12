@@ -16,32 +16,26 @@ using System.Windows.Shapes;
 namespace ProjectMay
 {
     /// <summary>
-    /// Interaction logic for ProductManager.xaml
+    /// Interaction logic for CustomerManager.xaml
     /// </summary>
-    public partial class ProductManager : Page
+    public partial class CustomerManager : Page
     {
-        public ProductManager()
+        public CustomerManager()
         {
             InitializeComponent();
             using (Context ctx = new Context())
             {
-                var products = ctx.Products;
-                foreach (var item in products)
+                var customers = ctx.Customers;
+                foreach (var item in customers)
                 {
-                    LvwProducts.Items.Add(item);
+                    LvwCustomers.Items.Add(item);
                 }
             }
         }
 
-        private void LvwProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LvwCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-        private void CreateNewProduct(object sender, RoutedEventArgs e)
-        {
-            NewProduct newproduct = new NewProduct();
-            newproduct.Show();
         }
     }
 }

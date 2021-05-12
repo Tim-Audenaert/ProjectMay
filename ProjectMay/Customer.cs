@@ -8,6 +8,19 @@ namespace ProjectMay
 {
     class Customer
     {
+        public Customer(string firstName, string lastName, int age, string address)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            Address = address;
+        }
+
+        public Customer()
+        { 
+        
+        }
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

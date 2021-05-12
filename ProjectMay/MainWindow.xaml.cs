@@ -38,6 +38,9 @@ namespace ProjectMay
                 ctx.Users.Add(new User("Tim", "Audenaert", "Overlord", "", ctx.Roles.FirstOrDefault(r => r.Id == 1)));
                 ctx.Users.Add(new User("Ken", "Field", "Clerk", "test", ctx.Roles.FirstOrDefault(r => r.Id == 2)));
                 ctx.Users.Add(new User("Wesley", "Messiaen", "Sales", "", ctx.Roles.FirstOrDefault(r => r.Id == 3)));
+
+                ctx.Suppliers.Add(new Supplier("Amazon", "Amazonstreet 77"));
+                ctx.Suppliers.Add(new Supplier("Microsoft", "Microsoftstreet 69"));
                 ctx.SaveChanges();
             }
         }

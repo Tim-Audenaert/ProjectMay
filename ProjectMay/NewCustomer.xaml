@@ -1,0 +1,32 @@
+﻿<Window x:Class="ProjectMay.NewCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMay"
+        mc:Ignorable="d"
+        Title="NewCustomer" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LblFirstName" Content="First name" HorizontalAlignment="Right"></Label>
+        <TextBox x:Name="TxtFirstName" Grid.Column="1" Width="200" Height="30" HorizontalAlignment="Left"  VerticalAlignment="Top"></TextBox>
+        <Label x:Name="LblLastName" Content="Last name" Grid.Row="1" HorizontalAlignment="Right" ></Label>
+        <TextBox x:Name="TxtLastName" Grid.Row="1" Grid.Column="1" Width="200" Height="30" HorizontalAlignment="Left"  VerticalAlignment="Top"></TextBox>
+        <Label x:Name="LblAge" Content="Age" Grid.Row="2" HorizontalAlignment="Right"></Label>
+        <TextBox x:Name="TxtAge" Grid.Row="2" Grid.Column="1" Width="200" Height="30" HorizontalAlignment="Left"  VerticalAlignment="Top"></TextBox>
+        <Label x:Name="LblAddress" Content="Address" Grid.Row="3" HorizontalAlignment="Right" ></Label>
+        <TextBox x:Name="TxtAddress" Grid.Row="3" Grid.Column="1" Width="200" Height="30" HorizontalAlignment="Left"  VerticalAlignment="Top"></TextBox>
+        <Button x:Name="BtnAddCustomer" Content="Add Customer" Grid.Row="5" Grid.ColumnSpan="2" Click="AddCustomer"></Button>
+    </Grid>
+</Window>

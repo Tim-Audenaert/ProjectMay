@@ -18,8 +18,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button x:Name="BtnUsers" Content="Users" FontSize="30" Click="BtnUsers_Click"></Button>
-        <Button x:Name="BtnProducts" Grid.Row="1" Content="Products" FontSize="30"></Button>
-        <Button x:Name="BtnCustomers" Grid.Row="2" Content="Customers" FontSize="30"></Button>
-        <Frame x:Name ="Manager" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3"></Frame>
+        <Button x:Name="BtnProducts" Grid.Row="1" Content="Products" FontSize="30" Click="BtnProducts_Click"></Button>
+        <Button x:Name="BtnCustomers" Grid.Row="2" Content="Customers" FontSize="30" Click="BtnCustomers_Click"></Button>
+        <Frame x:Name ="Manager" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

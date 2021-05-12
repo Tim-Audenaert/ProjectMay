@@ -67,6 +67,9 @@
     </ApplicationDefinition>
     <Compile Include="Context.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerManager.xaml.cs">
+      <DependentUpon>CustomerManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataManager.xaml.cs">
       <DependentUpon>DataManager.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,12 @@
     <Compile Include="LabelWithRequiredInfo.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewCustomer.xaml.cs">
+      <DependentUpon>NewCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewProduct.xaml.cs">
+      <DependentUpon>NewProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
@@ -91,6 +100,10 @@
     <Compile Include="UserManager.xaml.cs">
       <DependentUpon>UserManager.xaml</DependentUpon>
     </Compile>
+    <Page Include="CustomerManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DataManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +124,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -27,7 +27,26 @@ namespace ProjectMay
 
         private void BtnUsers_Click(object sender, RoutedEventArgs e)
         {
-            Manager.Navigate(new Uri("UserManager.xaml", UriKind.RelativeOrAbsolute));
+            Manager.Source = new Uri("UserManager.xaml", UriKind.RelativeOrAbsolute);
+            BtnUsers.Background = new SolidColorBrush(Colors.Aquamarine);
+            BtnProducts.Background = default;
+            BtnCustomers.Background = default;
+        }
+
+        private void BtnProducts_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.Source = new Uri("ProductManager.xaml", UriKind.RelativeOrAbsolute);
+            BtnUsers.Background = default;
+            BtnProducts.Background = new SolidColorBrush(Colors.Aquamarine);
+            BtnCustomers.Background = default;
+        }
+
+        private void BtnCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.Source = new Uri("CustomerManager.xaml", UriKind.RelativeOrAbsolute);
+            BtnUsers.Background = default;
+            BtnProducts.Background = default;
+            BtnCustomers.Background = new SolidColorBrush(Colors.Aquamarine);
         }
     }
 }
