@@ -71,6 +71,7 @@
       <DependentUpon>DataManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="LabelWithRequiredInfo.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -80,6 +81,10 @@
     <Compile Include="Order.cs" />
     <Compile Include="OrderStatus.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductManager.xaml.cs">
+      <DependentUpon>ProductManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RequiredFieldValidationRule.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="User.cs" />
@@ -107,6 +112,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

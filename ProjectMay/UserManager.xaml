@@ -24,32 +24,12 @@
                 <GridView>
                     <GridView.Columns>
                         <GridViewColumn x:Name="clmFirstName" DisplayMemberBinding="{Binding FirstName}" Header="First Name">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Label></Label>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn x:Name="clmLastName" DisplayMemberBinding="{Binding LastName}" Header="Last Name">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Label></Label>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn x:Name="ClmUsername" DisplayMemberBinding="{Binding Username}" Header="Username">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn x:Name="clmRole" DisplayMemberBinding="{Binding Role}" Header="Role">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Label></Label>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
