@@ -38,15 +38,15 @@ namespace ProjectMay
 			}
 		}
 
-		//SOURCE: https://wpf-tutorial.com/listview-control/listview-how-to-column-sorting/
 		private void Sort(object sender, RoutedEventArgs e)
 		{
-			GridViewColumnHeader column = (sender as GridViewColumnHeader);
+			GridViewColumnHeader column = sender as GridViewColumnHeader;
+			ListView listview = sender as ListView;
 			string sortBy = column.Tag.ToString();
 			if (listViewSortCol != null)
 			{
 				AdornerLayer.GetAdornerLayer(listViewSortCol).Remove(listViewSortAdorner);
-				LvwUsers.Items.SortDescriptions.Clear();
+				listview.Items.SortDescriptions.Clear();
 			}
 
 			ListSortDirection newDir = ListSortDirection.Ascending;
@@ -56,7 +56,7 @@ namespace ProjectMay
 			listViewSortCol = column;
 			listViewSortAdorner = new SortAdorner(listViewSortCol, newDir);
 			AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
-			LvwUsers.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+			listview.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
 		}
 
 		public class SortAdorner : Adorner

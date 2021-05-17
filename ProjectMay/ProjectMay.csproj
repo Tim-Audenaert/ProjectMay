@@ -70,6 +70,9 @@
     <Compile Include="CustomerManager.xaml.cs">
       <DependentUpon>CustomerManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomerOverview.xaml.cs">
+      <DependentUpon>CustomerOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataManager.xaml.cs">
       <DependentUpon>DataManager.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <DependentUpon>UserOverview.xaml</DependentUpon>
     </Compile>
     <Page Include="CustomerManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

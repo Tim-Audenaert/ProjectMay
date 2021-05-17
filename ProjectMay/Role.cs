@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMay
 {
-    class Role
+    class Role : IComparable
     {
         public Role(string name)
         {
@@ -21,6 +21,11 @@ namespace ProjectMay
         public override string ToString()
         {
             return Name;
+        }
+
+        public int CompareTo(object obj)
+        {
+            return Name.CompareTo((obj as Role).Name);
         }
     }
 }
