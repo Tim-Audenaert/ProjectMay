@@ -22,16 +22,24 @@ namespace ProjectMay
         public NewProduct()
         {
             InitializeComponent();
+            using (Context ctx = new Context())
+            {
+                foreach (var item in ctx.Suppliers)
+                {
+                    CmbSuppliers.Items.Add(item);
+                }
+            }
         }
 
         private void AddProduct(object sender, RoutedEventArgs e)
         {
             using(Context ctx = new Context())
             {
-                ctx.Products.Add(new Product(TxtName.Text, Convert.ToDouble(TxtPrice.Text), ctx.Suppliers.FirstOrDefault(s => s.Id == CmbSupplier.SelectedIndex + 1)));
+                                                                                                                                    //TEMPORARY - WHAT IF ORDER CHANGES?      
+                ctx.Products.Add(new Product(TxtName.Text, Convert.ToDouble(TxtPrice.Text), ctx.Suppliers.FirstOrDefault(s => s.Id == CmbSuppliers.SelectedIndex + 1)));
                 ctx.SaveChanges();
             }
-
+            MessageBox.Show("Product added!");
         }
     }
 }

@@ -35,5 +35,11 @@ namespace ProjectMay
             DataManager mngr = new DataManager();
             mngr.Show();
         }
+
+        private void BtnOverview_Click(object sender, RoutedEventArgs e)
+        {
+            Overview view = new Overview();
+            view.Show();
+        }
     }
 }

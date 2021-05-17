@@ -30,6 +30,7 @@ namespace ProjectMay
             {
                 ctx.Customers.Add(new Customer(TxtFirstName.Text, TxtLastName.Text, Convert.ToInt32(TxtAge.Text), TxtAddress.Text));
                 ctx.SaveChanges();
+                MessageBox.Show("Customer added!");
             }
         }
     }

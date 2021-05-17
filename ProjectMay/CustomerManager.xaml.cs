@@ -37,5 +37,11 @@ namespace ProjectMay
         {
 
         }
+
+        private void AddNewCustomer(object sender, RoutedEventArgs e)
+        {
+            NewCustomer newCustomer = new NewCustomer();
+            newCustomer.Show();
+        }
     }
 }

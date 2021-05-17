@@ -35,6 +35,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BtnCreateUser" Grid.Row="2" Content="New User" Click="CreateNewUser"></Button>
+        <Button x:Name="BtnAddCustomer" Grid.Row="2" Content="New Customer" Click="AddNewCustomer"></Button>
     </Grid>
 </Page>

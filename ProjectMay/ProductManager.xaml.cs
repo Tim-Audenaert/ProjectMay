@@ -40,8 +40,8 @@ namespace ProjectMay
 
         private void CreateNewProduct(object sender, RoutedEventArgs e)
         {
-            NewProduct newproduct = new NewProduct();
-            newproduct.Show();
+            NewProduct newProduct = new NewProduct();
+            newProduct.Show();
         }
     }
 }

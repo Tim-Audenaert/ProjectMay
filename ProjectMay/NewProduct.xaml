@@ -24,7 +24,7 @@
         <Label x:Name="LblPrice" Content="Price" Grid.Row="1" HorizontalAlignment="Right"></Label>
         <TextBox x:Name="TxtPrice" Grid.Row="1" Grid.Column="1" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
         <Label x:Name="LblSupplier" Content="Supplier" HorizontalAlignment="Right" Grid.Row="2"></Label>
-        <ComboBox x:Name="CmbSupplier" Grid.Row="2" Grid.Column="1" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"></ComboBox>
+        <ComboBox x:Name="CmbSuppliers" Grid.Row="2" Grid.Column="1" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"></ComboBox>
         <Button x:Name="BtnAddProduct" Content="Add Product" Grid.Row="5" Grid.ColumnSpan="2" Click="AddProduct"></Button>
     </Grid>
 </Window>
