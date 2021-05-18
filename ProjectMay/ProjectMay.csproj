@@ -73,8 +73,12 @@
     <Compile Include="CustomerOverview.xaml.cs">
       <DependentUpon>CustomerOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomListView.cs" />
     <Compile Include="DataManager.xaml.cs">
       <DependentUpon>DataManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditUser.xaml.cs">
+      <DependentUpon>EditUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="LabelWithRequiredInfo.cs" />
@@ -118,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

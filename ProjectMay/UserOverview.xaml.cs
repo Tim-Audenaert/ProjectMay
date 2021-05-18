@@ -41,22 +41,8 @@ namespace ProjectMay
 		private void Sort(object sender, RoutedEventArgs e)
 		{
 			GridViewColumnHeader column = sender as GridViewColumnHeader;
-			ListView listview = sender as ListView;
-			string sortBy = column.Tag.ToString();
-			if (listViewSortCol != null)
-			{
-				AdornerLayer.GetAdornerLayer(listViewSortCol).Remove(listViewSortAdorner);
-				listview.Items.SortDescriptions.Clear();
-			}
-
-			ListSortDirection newDir = ListSortDirection.Ascending;
-			if (listViewSortCol == column && listViewSortAdorner.Direction == newDir)
-				newDir = ListSortDirection.Descending;
-
-			listViewSortCol = column;
-			listViewSortAdorner = new SortAdorner(listViewSortCol, newDir);
-			AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
-			listview.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+			ListView listview = LvwUsers;
+			
 		}
 
 		public class SortAdorner : Adorner
@@ -97,5 +83,29 @@ namespace ProjectMay
 				drawingContext.Pop();
 			}
 		}
-	}
+
+        private void LvwUsers_Click(object sender, RoutedEventArgs e)
+        {
+			ListView listview = sender as ListView;
+			GridViewColumnHeader column = e.OriginalSource as GridViewColumnHeader;
+			MessageBox.Show(listview.ToString());
+			MessageBox.Show(column.ToString());
+			string sortBy = column.Tag.ToString();
+			if (listViewSortCol != null)
+			{
+				AdornerLayer.GetAdornerLayer(listViewSortCol).Remove(listViewSortAdorner);
+				listview.Items.SortDescriptions.Clear();
+			}
+
+			ListSortDirection newDir = ListSortDirection.Ascending;
+			if (listViewSortCol == column && listViewSortAdorner.Direction == newDir)
+				newDir = ListSortDirection.Descending;
+
+			listViewSortCol = column;
+			listViewSortAdorner = new SortAdorner(listViewSortCol, newDir);
+			AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
+			listview.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+
+		}
+    }
 }

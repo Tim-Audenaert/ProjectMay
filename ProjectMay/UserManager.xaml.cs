@@ -50,7 +50,8 @@ namespace ProjectMay
         {
             Button button = sender as Button;
             User user = button.DataContext as User;
-            MessageBox.Show(user.ToString());
+            EditUser edit = new EditUser(user.Id);
+            edit.Show();
         }
     }
 }

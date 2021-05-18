@@ -19,7 +19,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Label x:Name="LblUsers" Content="Users" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-        <ListView x:Name="LvwUsers" Width="365" Grid.Row="1">
+        <ListView GridViewColumnHeader.Click="LvwUsers_Click"  x:Name="LvwUsers" Width="365" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
