@@ -18,23 +18,26 @@
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label x:Name="LblUsers" Content="Users" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Label x:Name="LblUsers" Content="Users" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <ListView SelectionChanged="LvwUsers_SelectionChanged" x:Name="LvwUsers" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn x:Name="clmFirstName" DisplayMemberBinding="{Binding FirstName}" Header="First Name">
-                        </GridViewColumn>
-                        <GridViewColumn x:Name="clmLastName" DisplayMemberBinding="{Binding LastName}" Header="Last Name">
-                        </GridViewColumn>
-                        <GridViewColumn x:Name="ClmUsername" DisplayMemberBinding="{Binding Username}" Header="Username">
-                        </GridViewColumn>
-                        <GridViewColumn x:Name="clmRole" DisplayMemberBinding="{Binding Role}" Header="Role">
+                        <GridViewColumn x:Name="ClmFirstName" DisplayMemberBinding="{Binding FirstName}" Header="First Name"/>
+                        <GridViewColumn x:Name="ClmLastName" DisplayMemberBinding="{Binding LastName}" Header="Last Name"/>
+                        <GridViewColumn x:Name="ClmUsername" DisplayMemberBinding="{Binding Username}" Header="Username"/>
+                        <GridViewColumn x:Name="ClmRole" DisplayMemberBinding="{Binding Role}" Header="Role"/>
+                        <GridViewColumn x:Name="ClmEdit" Header="Edit">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                    <Button Content="..." Click="EditUser"><!--"="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}, Path=IsSelected}"--></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BtnCreateUser" Grid.Row="2" Content="New User" Click="CreateNewUser"></Button>
+        <Button x:Name="BtnCreateUser" Grid.Row="2" Content="New User" Click="CreateNewUser"/>
     </Grid>
 </Page>

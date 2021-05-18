@@ -45,5 +45,12 @@ namespace ProjectMay
             newuser.Show();
 
         }
+
+        private void EditUser(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            User user = button.DataContext as User;
+            MessageBox.Show(user.ToString());
+        }
     }
 }
