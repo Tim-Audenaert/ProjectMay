@@ -27,8 +27,22 @@ namespace ProjectMay
         }
         public EditUser(int Id)
         {
-            UserId = Id;
             InitializeComponent();
+            UserId = Id;
+            using (Context ctx = new Context())
+            {
+                foreach (var item in ctx.Roles)
+                {
+                    CmbRoles.Items.Add(item);
+                }
+
+                User user = ctx.Users.FirstOrDefault(u => u.Id == UserId);
+                TxtFirstName.Text = user.FirstName;
+                TxtLastName.Text = user.LastName;
+                TxtUsername.Text = user.Username;
+                CmbRoles.SelectedItem = user.Role;
+
+            }
         }
 
         private void Delete_User(object sender, RoutedEventArgs e)
@@ -46,8 +60,12 @@ namespace ProjectMay
         {
             using (Context ctx = new Context())
             {
-                User toDelete = ctx.Users.Where(u => u.Id == UserId) as User;
-                ctx.Users.Remove(toDelete);
+                User toEdit = ctx.Users.FirstOrDefault(u => u.Id == UserId);
+                toEdit.FirstName = TxtFirstName.Text;
+                toEdit.LastName = TxtLastName.Text ;
+                toEdit.Username = TxtUsername.Text;
+                toEdit.Password = TxtPassword.Text == string.Empty ? toEdit.Password : TxtPassword.Text;
+                toEdit.Role = ctx.Roles.FirstOrDefault(r => r.Id == CmbRoles.SelectedIndex + 1);
                 ctx.SaveChanges();
                 MessageBox.Show("Success!");
             }
