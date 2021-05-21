@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace ProjectMay
             InitializeComponent();
             using (Context ctx = new Context())
             {
-                var products = ctx.Products;
+                var products = ctx.Products.Include(p => p.Supplier);
                 foreach (var item in products)
                 {
                     LvwProducts.Items.Add(item);
@@ -35,13 +36,22 @@ namespace ProjectMay
 
         private void LvwProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            BtnDeleteProduct.IsEnabled = true;
         }
-
-        private void CreateNewProduct(object sender, RoutedEventArgs e)
+        private void AddUpdateProduct(object sender, RoutedEventArgs e)
         {
             NewProduct newProduct = new NewProduct();
             newProduct.Show();
+        }
+
+        private void DeleteProduct(object sender, RoutedEventArgs e)
+        {
+            using (Context ctx = new Context())
+            {
+                ctx.Products.Remove(ctx.Products.Find((LvwProducts.SelectedItem as Product).Id));
+                ctx.SaveChanges();
+            }
+            MessageBox.Show("Product deleted!");
         }
     }
 }

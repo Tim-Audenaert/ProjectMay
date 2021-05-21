@@ -25,23 +25,28 @@ namespace ProjectMay
         public NewProduct()
         {
             InitializeComponent();
-            using (Context ctx = new Context())
-            {
-                foreach (var item in ctx.Suppliers)
-                {
-                    CmbSuppliers.Items.Add(item);
-                }
-            }
         }
 
-        private void AddProduct(object sender, RoutedEventArgs e)
+        private void AddUpdateProduct(object sender, RoutedEventArgs e)
         {
-            using(Context ctx = new Context())
-            {                                                                                                                                    //TEMPORARY - WHAT IF ORDER CHANGES?      
-                ctx.Products.Add(new Product(TxtName.Text, Convert.ToDouble(TxtPrice.Text), ctx.Suppliers.FirstOrDefault(s => s.Id == CmbSuppliers.SelectedIndex + 1)));
+            string confirmation = string.Empty;
+            using (Context ctx = new Context())
+            {
+                var product = ctx.Products.FirstOrDefault(p => p.Name == TxtName.Text);
+                if (product == null)
+                {
+                    confirmation = "Product added!";
+                    ctx.Products.Add(new Product(TxtName.Text, Convert.ToDouble(TxtPrice.Text), ctx.Suppliers.FirstOrDefault(s => s.Name == TxtSuppliers.Text)));
+                }
+                else
+                {
+                    confirmation = "Product updated!";
+                    product.Name = TxtName.Text;
+                    product.Price = Convert.ToDouble(TxtPrice.Text);
+                }               
                 ctx.SaveChanges();
             }
-            MessageBox.Show("Product added!");
+            MessageBox.Show(confirmation);
         }
 
         private void ImportJSon(object sender, RoutedEventArgs e)
@@ -63,20 +68,45 @@ namespace ProjectMay
                 filename = dlg.FileName;
             }
 
-            //JObject o1 = JObject.Parse(File.ReadAllText(filename));
-            //Product product = o1.ToObject<Product>();
-            //CmbSuppliers.Text = product.Supplier.Name;
-            //TxtName.Text = product.Name;
-            //TxtPrice.Text = product.Price.ToString();
+            JObject o1 = JObject.Parse(File.ReadAllText(filename));
+            Product product = o1.ToObject<Product>();
+            GetSupplier(product);
+            TxtSuppliers.Text = product.Supplier.Name;
+            TxtName.Text = product.Name;
+            TxtPrice.Text = product.Price.ToString();
 
-            //read JSON directly from a file
-            using (StreamReader file = File.OpenText(filename))
-            using (JsonTextReader reader = new JsonTextReader(file))
+            using (Context ctx = new Context())
             {
-                JObject o2 = (JObject)JToken.ReadFrom(reader);
-                MessageBox.Show(o2.ToString());
+                var exists = ctx.Products.FirstOrDefault(p => p.Name == TxtName.Text);
+                BtnAddUpdateProduct.Content = (exists == null) ? "Add Product" : "Update Product";
             }
 
+                //read JSON directly from a file
+                //using (StreamReader file = File.OpenText(filename))
+                //using (JsonTextReader reader = new JsonTextReader(file))
+                //{
+                //    JObject o2 = (JObject)JToken.ReadFrom(reader);
+                //    MessageBox.Show(o2.ToString());
+
+                //}
+
+        }
+
+        private void GetSupplier(Product product)
+        {
+            using (Context ctx = new Context())
+            {
+                var supplier = ctx.Suppliers.FirstOrDefault(s => s.Name == product.Supplier.Name);
+                if (supplier == null)
+                {
+                    if (MessageBox.Show("Supplier doesn't exist in the database. Would you like to add it?", "Supplier doesn't exist in the database. Would you like to add it?", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        ctx.Suppliers.Add(new Supplier(product.Supplier.Name, product.Supplier.Address));
+                        ctx.SaveChanges();
+                        MessageBox.Show("Supplier has been added to the database");
+                    }
+                }
+            }
         }
     }
 }

@@ -33,6 +33,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BtnCreateProduct" Grid.Row="2" Content="New Product" Click="CreateNewProduct"></Button>
+        <Button x:Name="BtnAddUpdateProduct" Grid.Row="2" Content="Add/Update Product" Click="AddUpdateProduct"></Button>
+        <Button x:Name="BtnDeleteProduct" Grid.Column="1" Grid.Row="1" Content="Delete Product" Click="DeleteProduct" Height="20" Width="100" HorizontalAlignment="Left" IsEnabled="False"/>
     </Grid>
 </Page>
