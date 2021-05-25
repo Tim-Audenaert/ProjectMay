@@ -33,7 +33,7 @@ namespace ProjectMay
 
         private void BtnProducts_Click(object sender, RoutedEventArgs e)
         {
-            Manager.Source = new Uri("ProductManager.xaml", UriKind.RelativeOrAbsolute);
+            Manager.Source = new Uri("ProductOverview.xaml", UriKind.RelativeOrAbsolute);
             BtnUsers.Background = default;
             BtnProducts.Background = new SolidColorBrush(Colors.Aquamarine);
             BtnCustomers.Background = default;

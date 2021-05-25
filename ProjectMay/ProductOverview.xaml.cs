@@ -18,25 +18,24 @@ using System.Windows.Shapes;
 namespace ProjectMay
 {
     /// <summary>
-    /// Interaction logic for UserOverview.xaml
+    /// Interaction logic for ProductOverview.xaml
     /// </summary>
-    public partial class UserOverview : Page
+    public partial class ProductOverview : Page
     {
 		private GridViewColumnHeader listViewSortCol = null;
 		private SortAdorner listViewSortAdorner = null;
-
-		public UserOverview()
+		public ProductOverview()
         {
             InitializeComponent();
 			using (Context ctx = new Context())
 			{
-				var users = ctx.Users.Include(u => u.Role);
-				foreach (var item in users)
+				var products = ctx.Products;
+				foreach (var item in products)
 				{
-					LvwUsers.Items.Add(item);
+					LvwProducts.Items.Add(item);
 				}
 			}
-		}
+		}	
 
 		public class SortAdorner : Adorner
 		{
@@ -76,9 +75,8 @@ namespace ProjectMay
 				drawingContext.Pop();
 			}
 		}
-
-        private void Sort(object sender, RoutedEventArgs e)
-        {
+		private void Sort(object sender, RoutedEventArgs e)
+		{
 			ListView listview = sender as ListView;
 			GridViewColumnHeader column = e.OriginalSource as GridViewColumnHeader;
 			string sortBy = column.Tag.ToString();
@@ -98,5 +96,5 @@ namespace ProjectMay
 			listview.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
 
 		}
-    }
+	}
 }

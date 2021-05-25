@@ -1,0 +1,56 @@
+﻿<Page x:Class="ProjectMay.ProductOverview"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectMay"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductOverview">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LblProducts" Content="Products" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <ListView GridViewColumnHeader.Click="Sort" x:Name="LvwProducts" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn x:Name="ClmName" DisplayMemberBinding="{Binding Name}" Width="100">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Tag="Name">Name</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="ClmPrice" DisplayMemberBinding="{Binding Price}" Width="100">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Tag="Price">Price</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="ClmSupplier" DisplayMemberBinding="{Binding Supplier}" Width="100">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Tag="Suplier">Supplier</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="ClmTotalSold" DisplayMemberBinding="{Binding Supplier}" Width="100">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Tag="TotalSold">Total Units Sold</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="ClmStock" DisplayMemberBinding="{Binding Supplier}" Width="100">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Tag="CurrentStock">Current Stock</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

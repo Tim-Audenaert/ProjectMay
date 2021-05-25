@@ -106,6 +106,9 @@
     <Compile Include="ProductManager.xaml.cs">
       <DependentUpon>ProductManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProductOverview.xaml.cs">
+      <DependentUpon>ProductOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RequiredFieldValidationRule.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Supplier.cs" />
@@ -165,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProductManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

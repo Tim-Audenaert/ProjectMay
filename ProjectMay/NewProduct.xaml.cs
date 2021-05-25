@@ -47,6 +47,7 @@ namespace ProjectMay
                 ctx.SaveChanges();
             }
             MessageBox.Show(confirmation);
+            BtnAddUpdateProduct.Content = "Update Product";
         }
 
         private void ImportJSon(object sender, RoutedEventArgs e)
@@ -74,12 +75,7 @@ namespace ProjectMay
             TxtSuppliers.Text = product.Supplier.Name;
             TxtName.Text = product.Name;
             TxtPrice.Text = product.Price.ToString();
-
-            using (Context ctx = new Context())
-            {
-                var exists = ctx.Products.FirstOrDefault(p => p.Name == TxtName.Text);
-                BtnAddUpdateProduct.Content = (exists == null) ? "Add Product" : "Update Product";
-            }
+            CheckStatus();
 
                 //read JSON directly from a file
                 //using (StreamReader file = File.OpenText(filename))
@@ -106,6 +102,15 @@ namespace ProjectMay
                         MessageBox.Show("Supplier has been added to the database");
                     }
                 }
+            }
+        }
+
+        private void CheckStatus()
+        {
+            using (Context ctx = new Context())
+            {
+                var exists = ctx.Products.FirstOrDefault(p => p.Name == TxtName.Text);
+                BtnAddUpdateProduct.Content = (exists == null) ? "Add Product" : "Update Product";
             }
         }
     }

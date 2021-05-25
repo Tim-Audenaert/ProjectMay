@@ -19,28 +19,28 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Label x:Name="LblUsers" Content="Users" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-        <ListView GridViewColumnHeader.Click="LvwUsers_Click"  x:Name="LvwUsers" Width="365" Grid.Row="1">
+        <ListView GridViewColumnHeader.Click="Sort" x:Name="LvwUsers" Width="365" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
                         <GridViewColumn x:Name="clmFirstName" Width="90" DisplayMemberBinding="{Binding FirstName}">
                             <GridViewColumn.Header>
-                                <GridViewColumnHeader Tag="FirstName" Click="Sort">First Name</GridViewColumnHeader>
+                                <GridViewColumnHeader Tag="FirstName">First Name</GridViewColumnHeader>
                             </GridViewColumn.Header>
                         </GridViewColumn>
                         <GridViewColumn x:Name="clmLastName" Width="90" DisplayMemberBinding="{Binding LastName}">
                             <GridViewColumn.Header>
-                                <GridViewColumnHeader Tag="LastName" Click="Sort">Last Name</GridViewColumnHeader>
+                                <GridViewColumnHeader Tag="LastName">Last Name</GridViewColumnHeader>
                             </GridViewColumn.Header>
                         </GridViewColumn>
                         <GridViewColumn x:Name="ClmUsername"  Width="90" DisplayMemberBinding="{Binding Username}">
                             <GridViewColumn.Header>
-                                <GridViewColumnHeader Tag="Username" Click="Sort">Username</GridViewColumnHeader>
+                                <GridViewColumnHeader Tag="Username">Username</GridViewColumnHeader>
                             </GridViewColumn.Header>
                         </GridViewColumn>
                         <GridViewColumn x:Name="clmRole"  Width="90" DisplayMemberBinding="{Binding Role}">
                             <GridViewColumn.Header>
-                                <GridViewColumnHeader Tag="Role" Click="Sort">Role</GridViewColumnHeader>
+                                <GridViewColumnHeader Tag="Role">Role</GridViewColumnHeader>
                             </GridViewColumn.Header>
                         </GridViewColumn>
                     </GridView.Columns>
