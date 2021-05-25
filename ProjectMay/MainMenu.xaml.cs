@@ -41,5 +41,11 @@ namespace ProjectMay
             Overview view = new Overview();
             view.Show();
         }
+
+        private void BtnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            OrderManager om = new OrderManager();
+            om.Show();
+        }
     }
 }

@@ -41,6 +41,10 @@ namespace ProjectMay
 
                 ctx.Suppliers.Add(new Supplier("Amazon", "Amazonstreet 77"));
                 ctx.Suppliers.Add(new Supplier("Microsoft", "Microsoftstreet 69"));
+
+                ctx.OrderStatuses.Add(new OrderStatus("Waiting for payment"));
+                ctx.OrderStatuses.Add(new OrderStatus("Waiting for delivery"));
+                ctx.OrderStatuses.Add(new OrderStatus("Completed"));
                 ctx.SaveChanges();
             }
         }

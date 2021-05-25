@@ -10,5 +10,10 @@ namespace ProjectMay
     {
         public int Id { get; set; }
         public string Status { get; set; }
+
+        public OrderStatus(string status)
+        {
+            Status = status;
+        }
     }
 }

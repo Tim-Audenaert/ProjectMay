@@ -23,6 +23,6 @@
         </StackPanel>
         <Button x:Name ="BtnDataManager" Grid.Column="1" Width="200" Height="50" FontSize="30" Content="Data Manager" Click="BtnDataManager_Click"></Button>
         <Button x:Name ="BtnOverview" Grid.Column="1" Grid.Row="1" Width="200" Height="50" FontSize="30" Content="Overview" Click="BtnOverview_Click"></Button>
-        <Button x:Name ="BtnOrder" Grid.Column="1" Grid.Row="2" Width="200" Height="50" FontSize="30" Content="Order"></Button>
+        <Button x:Name ="BtnOrder" Grid.Column="1" Grid.Row="2" Width="200" Height="50" FontSize="30" Content="Order" Click="BtnOrder_Click"></Button>
     </Grid>
 </Window>

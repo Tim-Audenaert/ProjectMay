@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="lblUsername" Content="Username" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="30"></Label>
         <Label x:Name="lblPassword" Grid.Row="1" Content="Password" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="30"></Label>
-        <TextBox x:Name="TxtUsername" Grid.Column="1" Width="400" Height="30"></TextBox>
+        <TextBox x:Name="TxtUsername" Grid.Column="1" Width="400" Height="30">Overlord</TextBox>
         <TextBox x:Name="TxtPassword" Grid.Column="1" Grid.Row="1" Width="400" Height="30"></TextBox>
         <Button Grid.ColumnSpan="2" Grid.Row="2" FontSize="30" Content="Log In" BorderThickness="10" Margin="10 10 10 10" Click="Button_Click"></Button>
     </Grid>

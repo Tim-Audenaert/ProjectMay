@@ -35,7 +35,7 @@
                         </GridViewColumn>
                         <GridViewColumn x:Name="ClmSupplier" DisplayMemberBinding="{Binding Supplier}" Width="100">
                             <GridViewColumn.Header>
-                                <GridViewColumnHeader Tag="Suplier">Supplier</GridViewColumnHeader>
+                                <GridViewColumnHeader Tag="Supplier">Supplier</GridViewColumnHeader>
                             </GridViewColumn.Header>
                         </GridViewColumn>
                         <GridViewColumn x:Name="ClmTotalSold" DisplayMemberBinding="{Binding Supplier}" Width="100">
