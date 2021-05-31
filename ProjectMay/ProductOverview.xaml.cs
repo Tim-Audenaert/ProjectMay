@@ -34,9 +34,13 @@ namespace ProjectMay
 				{
 					LvwProducts.Items.Add(item);
 				}
-			}
+			}			
 		}	
 
+		private void ShowHideWatermark(object sender, RoutedEventArgs e)
+		{
+			SearchWatermark.Visibility = (TxtSearch.Text == "" && TxtSearch.IsFocused == false) ? Visibility.Visible : Visibility.Collapsed;
+		}
 
 
 		public class SortAdorner : Adorner
@@ -98,5 +102,6 @@ namespace ProjectMay
 			listview.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
 
 		}
-	}
+    }
 }
+ 

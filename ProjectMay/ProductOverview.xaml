@@ -19,8 +19,10 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Label x:Name="LblProducts" Content="Products" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-        <TextBox x:Name="TxtSearch" Width="200" Height="20" HorizontalAlignment="Right"/>
-        <Label x:Name="SearchWatermark" Foreground="Gray" Content="Search..." HorizontalAlignment="Right" Margin="0,10,147,340" Grid.RowSpan="2"/>
+        <StackPanel HorizontalAlignment="Right" Width="200" Height="20">
+            <TextBox x:Name="TxtSearch" GotFocus="ShowHideWatermark" LostFocus="ShowHideWatermark"/>
+        <Label x:Name="SearchWatermark" Foreground="Gray" Content="Search..." Margin="0 -22 0 0" Grid.RowSpan="2" IsHitTestVisible="False"/>
+            </StackPanel>
         <ListView GridViewColumnHeader.Click="Sort" x:Name="LvwProducts" Grid.Row="1">
             <ListView.View>
                 <GridView>
