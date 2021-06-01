@@ -27,14 +27,17 @@ namespace ProjectMay
 		public ProductOverview()
         {
             InitializeComponent();
+			var products = new List<Product>();
 			using (Context ctx = new Context())
 			{
-				var products = ctx.Products;
+				products = ctx.Products.ToList();
 				foreach (var item in products)
 				{
 					LvwProducts.Items.Add(item);
 				}
-			}			
+			}
+
+			var filteredProducts = new List<Product>();
 		}	
 
 		private void ShowHideWatermark(object sender, RoutedEventArgs e)
