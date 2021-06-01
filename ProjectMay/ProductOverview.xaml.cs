@@ -38,6 +38,7 @@ namespace ProjectMay
 			}
 
 			var filteredProducts = new List<Product>();
+
 		}	
 
 		private void ShowHideWatermark(object sender, RoutedEventArgs e)
