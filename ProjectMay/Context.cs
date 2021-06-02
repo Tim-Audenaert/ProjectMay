@@ -20,8 +20,10 @@ namespace ProjectMay
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Sale> Sales { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Purchase> Purchases { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<Product> Products { get; set; }
 

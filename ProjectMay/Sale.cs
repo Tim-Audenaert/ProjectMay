@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace ProjectMay
 {
-    class Order
+    class Sale
     {
-        public Order(ICollection<Product> products, DateTime dateOrdered, Customer customer, OrderStatus orderStatus)
+        public Sale(ICollection<Product> products, DateTime dateOrdered, Supplier supplier, OrderStatus orderStatus)
         {
             Products = products;
             DateOrdered = dateOrdered;
-            Customer = customer;
+            Supplier = supplier;
             OrderStatus = orderStatus;
         }
 
-        public Order()
+        public Sale()
         {
         }
 
         public int Id { get; set; }
         public ICollection<Product> Products { get; set; }
         public DateTime DateOrdered { get; set; }
-        public Customer Customer { get; set; }
+        public Supplier Supplier { get; set; }
         public OrderStatus OrderStatus { get; set; }
     }
 }

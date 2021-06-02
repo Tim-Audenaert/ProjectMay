@@ -23,6 +23,6 @@ namespace ProjectMay
         public string Name { get; set; }
         public double Price { get; set; }
         public Supplier Supplier { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Sale> Orders { get; set; }
     }
 }
