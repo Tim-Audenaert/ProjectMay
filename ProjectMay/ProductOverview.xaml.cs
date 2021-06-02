@@ -24,10 +24,12 @@ namespace ProjectMay
     {
 		private GridViewColumnHeader listViewSortCol = null;
 		private SortAdorner listViewSortAdorner = null;
+		private List<Product> products;
+		private List<Product> filteredProducts;
 		public ProductOverview()
         {
             InitializeComponent();
-			var products = new List<Product>();
+			products = new List<Product>();
 			using (Context ctx = new Context())
 			{
 				products = ctx.Products.ToList();
@@ -106,6 +108,27 @@ namespace ProjectMay
 			listview.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
 
 		}
+
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+			LvwProducts.Items.Clear();
+			var toAdd = products.Where(p => p.Name.ToLower().Contains(TxtSearch.Text.ToLower()));
+			if (toAdd != null || TxtSearch.Text != "")
+			{
+				filteredProducts.Clear();
+				foreach (var item in toAdd)
+				{
+					filteredProducts.Add(item);
+				}
+			}
+			if (filteredProducts != null)
+			{
+				foreach (var item in filteredProducts)
+				{
+					LvwProducts.Items.Add(item);
+				}
+			}
+        }
     }
 }
  
