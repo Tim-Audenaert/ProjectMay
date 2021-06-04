@@ -91,5 +91,11 @@ namespace ProjectMay
 			listview.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
 
 		}
-	}
+
+        private void AddOrder(object sender, RoutedEventArgs e)
+        {
+			AddOrder ao = new AddOrder();
+			ao.Show();
+        }
+    }
 }

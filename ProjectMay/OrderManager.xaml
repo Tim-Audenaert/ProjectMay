@@ -18,8 +18,8 @@
         </Grid.RowDefinitions>
         <Label x:Name="LblOrders" Content="Orders" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         <StackPanel>
-        <Button x:Name="BtnShowPurchases" Width="100" Height="20" Content="Hide Purchases" Margin="300 0 0 0"></Button>
-        <Button x:Name="BtnShowSales" Width="100" Height="20" Content="Hide Sales" Margin="300 0 0 0"></Button>
+            <Button x:Name="BtnShowPurchases" Width="100" Height="20" Content="Hide Purchases" Margin="300 0 0 0"/>
+            <Button x:Name="BtnShowSales" Width="100" Height="20" Content="Hide Sales" Margin="300 0 0 0"/>
         </StackPanel>
         <ListView SelectionChanged="LvwOrders_SelectionChanged" GridViewColumnHeader.Click="Sort" x:Name="LvwOrders" Grid.Row="1">
             <ListView.View>
@@ -49,5 +49,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="BtnAddOrder" Margin="10 10 10 10" Grid.Row="3" Content="Add Order" Click="AddOrder"/>
     </Grid>
 </Window>
