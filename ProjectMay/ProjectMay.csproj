@@ -121,7 +121,6 @@
     <Compile Include="ProductOverview.xaml.cs">
       <DependentUpon>ProductOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Recipient.cs" />
     <Compile Include="RequiredFieldValidationRule.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Sale.cs" />

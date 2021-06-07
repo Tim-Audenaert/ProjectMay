@@ -8,11 +8,11 @@ namespace ProjectMay
 {
     class Sale
     {
-        public Sale(ICollection<Product> products, DateTime dateOrdered, Supplier supplier, OrderStatus orderStatus)
+        public Sale(ICollection<Product> products, DateTime dateOrdered, Customer customer, OrderStatus orderStatus)
         {
             Products = products;
             DateOrdered = dateOrdered;
-            Supplier = supplier;
+            Customer = customer;
             OrderStatus = orderStatus;
         }
 
@@ -23,7 +23,7 @@ namespace ProjectMay
         public int Id { get; set; }
         public ICollection<Product> Products { get; set; }
         public DateTime DateOrdered { get; set; }
-        public Supplier Supplier { get; set; }
+        public Customer Customer { get; set; }
         public OrderStatus OrderStatus { get; set; }
     }
 }

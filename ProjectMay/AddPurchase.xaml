@@ -9,6 +9,15 @@
       Title="AddPurchase">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>                  
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="CmbSupplier"/>
     </Grid>
 </Page>

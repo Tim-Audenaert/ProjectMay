@@ -22,6 +22,13 @@ namespace ProjectMay
         public AddOrder()
         {
             InitializeComponent();
+            OrderPage.Source = new Uri("AddPurchase.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void Switch(object sender, RoutedEventArgs e)
+        {
+            string page = (RbPurchase.IsChecked == true) ? "AddPurchase.xaml" : "AddSale.xaml";
+            OrderPage.Source = new Uri(page, UriKind.RelativeOrAbsolute);
         }
     }
 }

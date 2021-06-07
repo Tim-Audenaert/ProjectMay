@@ -15,8 +15,8 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <RadioButton Content="Purchase" HorizontalAlignment="Right" GroupName="Order" IsChecked="True"/>
-        <RadioButton Content="Sale" Grid.Column="1" HorizontalAlignment="Left" GroupName="Order"/>
-        <Frame x:Name="OrderPage" Grid.ColumnSpan="2"></Frame>
+        <RadioButton x:Name="RbPurchase" Content="Purchase" HorizontalAlignment="Right" GroupName="PageSwitch" Checked="Switch"/>
+        <RadioButton x:Name="RbSale" Content="Sale" Grid.Column="1" HorizontalAlignment="Left" GroupName="PageSwitch" Checked="Switch"/>
+        <Frame x:Name="OrderPage" Grid.Row="2" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

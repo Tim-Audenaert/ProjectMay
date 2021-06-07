@@ -23,11 +23,6 @@ namespace ProjectMay
         {
             InitializeComponent();
             LblInfo.Content = (Global.Username + " (" + Global.Role + ")");
-            if (Global.Role == "Admin")
-            {
-                BtnUserManager.Visibility = Visibility.Visible;
-                BtnUserManager.IsEnabled = true;
-            }
         }
 
         private void BtnDataManager_Click(object sender, RoutedEventArgs e)

@@ -23,6 +23,15 @@ namespace ProjectMay
         public AddPurchase()
         {
             InitializeComponent();
+            using (Context ctx = new Context())
+            {
+                var suppliers = ctx.Suppliers.ToList();
+                foreach (var item in suppliers)
+                {
+                    CmbSupplier.Items.Add(item);
+                }
+                
+            }
         }
     }
 }
