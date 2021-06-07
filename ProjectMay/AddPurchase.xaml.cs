@@ -30,8 +30,21 @@ namespace ProjectMay
                 {
                     CmbSupplier.Items.Add(item);
                 }
-                
+
             }
+        }
+
+        private void CmbSupplier_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            using (Context ctx = new Context())
+            {
+                var products = ctx.Products.Where(p => p.Supplier == CmbSupplier.SelectedItem);
+                foreach (var item in products)
+                {
+                    LvwProducts.Items.Add(item);
+                }
+            }
+
         }
     }
 }
