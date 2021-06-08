@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace ProjectMay
             InitializeComponent();
             using (Context ctx = new Context())
             {
-                var suppliers = ctx.Suppliers.ToList();
+                var suppliers = ctx.Suppliers.Include(nameof(Product));
                 foreach (var item in suppliers)
                 {
                     CmbSupplier.Items.Add(item);
