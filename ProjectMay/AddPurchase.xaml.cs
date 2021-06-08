@@ -26,7 +26,7 @@ namespace ProjectMay
             InitializeComponent();
             using (Context ctx = new Context())
             {
-                var suppliers = ctx.Suppliers.Include(nameof(Product));
+                var suppliers = ctx.Suppliers;
                 foreach (var item in suppliers)
                 {
                     CmbSupplier.Items.Add(item);
@@ -39,7 +39,7 @@ namespace ProjectMay
         {
             using (Context ctx = new Context())
             {
-                var products = ctx.Products.Where(p => p.Supplier == CmbSupplier.SelectedItem);
+                var products = ctx.Products.Where(p => p.Supplier == (CmbSupplier.SelectedItem as Supplier));
                 foreach (var item in products)
                 {
                     LvwProducts.Items.Add(item);
