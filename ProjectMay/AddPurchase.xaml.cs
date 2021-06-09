@@ -39,12 +39,17 @@ namespace ProjectMay
         {
             using (Context ctx = new Context())
             {
-                var products = ctx.Products.Where(p => p.Supplier == (CmbSupplier.SelectedItem as Supplier));
+                var products = ctx.Products.Include(nameof(Supplier)).Where(p => p.Supplier.Id == CmbSupplier.SelectedIndex + 1);
                 foreach (var item in products)
                 {
                     LvwProducts.Items.Add(item);
                 }
             }
+
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
