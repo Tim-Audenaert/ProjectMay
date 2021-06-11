@@ -27,9 +27,9 @@
                         </GridViewColumn>
                         <GridViewColumn x:Name="clmLastName" DisplayMemberBinding="{Binding LastName}" Header="Last Name">
                         </GridViewColumn>
-                        <GridViewColumn x:Name="ClmAge" DisplayMemberBinding="{Binding Age}" Header="Username">
+                        <GridViewColumn x:Name="ClmAge" DisplayMemberBinding="{Binding Age}" Header="Age">
                         </GridViewColumn>
-                        <GridViewColumn x:Name="clmAddress" DisplayMemberBinding="{Binding Address}" Header="Role">
+                        <GridViewColumn x:Name="clmAddress" DisplayMemberBinding="{Binding Address}" Header="Address">
                         </GridViewColumn>
                     </GridView.Columns>
                 </GridView>

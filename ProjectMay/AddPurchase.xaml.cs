@@ -50,7 +50,12 @@ namespace ProjectMay
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            LvwPurchase.Items.Add(e.Source as Product);
+        }
 
+        private void BtnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            LvwPurchase.Items.Remove(e.Source);
         }
     }
 }

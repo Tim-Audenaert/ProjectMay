@@ -22,23 +22,24 @@
         <StackPanel>
             <Label Content="Supplier" Width="80"/>
             <ComboBox x:Name="CmbSupplier" Width="200" Height="20" SelectionChanged="CmbSupplier_SelectionChanged"/>
-            <Label Content="Products"  Width="80"/>
-            <ListView x:Name="LvwProducts">
+        </StackPanel>
+        <Label Content="Products" VerticalAlignment="Bottom" Width="80"/>
+        <ListView x:Name="LvwProducts" Grid.Row="1" Width="300">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn x:Name="clmName" DisplayMemberBinding="{Binding Name}" Header="Name">
+                        <GridViewColumn x:Name="ClmName" DisplayMemberBinding="{Binding Name}" Header="Name" Width="60">
                             </GridViewColumn>
-                            <GridViewColumn x:Name="clmPrice" DisplayMemberBinding="{Binding Price}" Header="Price">
+                        <GridViewColumn x:Name="ClmPrice" DisplayMemberBinding="{Binding Price}" Header="Price" Width="60">
                             </GridViewColumn>
-                            <GridViewColumn x:Name="ClmAmount" Header="Amount">
+                        <GridViewColumn x:Name="ClmAmount" Header="Amount" Width="60">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <xctk:IntegerUpDown x:Name="ProductAmount" Value="0"></xctk:IntegerUpDown>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn x:Name="ClmAdd" Header="Add">
+                        <GridViewColumn x:Name="ClmAdd" Header="Add" Width="60">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button x:Name="BtnAdd" Content="+" Click="BtnAdd_Click" HorizontalAlignment="Center"></Button>
@@ -49,6 +50,27 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-        </StackPanel>
+        <ListView x:Name="LvwPurchase" Grid.Column="2" Grid.Row="1" Width="300">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn x:Name="ClmProductName" DisplayMemberBinding="{Binding Name}" Header="Name" Width="60">
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="ClmProductAmount" Header="Amount" Width="60">
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="ClmTotalPrice" DisplayMemberBinding="{Binding Price}" Width="60" Header="Total Price">
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="ClmRemove" Header="Remove" Width="60">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="BtnRemove" Content="-" Click="BtnRemove_Click" HorizontalAlignment="Center"></Button>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="BtnPurchase" Content="Purchase" Grid.Column="1" Grid.Row="2" Width="300" Height="20" VerticalAlignment="Top"></Button>
     </Grid>
 </Page>

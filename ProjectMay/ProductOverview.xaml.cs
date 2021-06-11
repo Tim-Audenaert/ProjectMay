@@ -111,23 +111,23 @@ namespace ProjectMay
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-			LvwProducts.Items.Clear();
-			var toAdd = products.Where(p => p.Name.ToLower().Contains(TxtSearch.Text.ToLower()));
-			if (toAdd != null || TxtSearch.Text != "")
-			{
-				filteredProducts.Clear();
-				foreach (var item in toAdd)
-				{
-					filteredProducts.Add(item);
-				}
-			}
-			if (filteredProducts != null)
-			{
-				foreach (var item in filteredProducts)
-				{
-					LvwProducts.Items.Add(item);
-				}
-			}
+			//LvwProducts.Items.Clear();
+			//var toAdd = products.Where(p => p.Name.ToLower().Contains(TxtSearch.Text.ToLower()));
+			//if (toAdd != null || TxtSearch.Text != "")
+			//{
+			//	filteredProducts.Clear();
+			//	foreach (var item in toAdd)
+			//	{
+			//		filteredProducts.Add(item);
+			//	}
+			//}
+			//if (filteredProducts != null)
+			//{
+			//	foreach (var item in filteredProducts)
+			//	{
+			//		LvwProducts.Items.Add(item);
+			//	}
+			//}
         }
     }
 }
